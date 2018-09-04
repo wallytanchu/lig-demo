@@ -8,9 +8,12 @@ use Image;
 
 class PostController extends Controller
 {
+    /**
+     * List Post
+     */
     public function index()
     {
-        return Post::orderm('created_at', 'desc')->paginate(5);
+        return Post::orderby('created_at', 'desc')->paginate(5);
     }
     
     /**

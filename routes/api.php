@@ -19,21 +19,28 @@ use App\Post;
 // });
 
 
-// Routes for the Post API
-Route::get('posts', 'PostController@index');
-Route::get('posts/{post}', 'PostController@show');
-
-Route::group(['middleware' => 'auth:api'], function() {
-      Route::post('posts', 'PostController@store');
-      Route::post('posts/{post}', 'PostController@update');
-      Route::delete('posts/{post}', 'PostController@delete');
-  });
-
 // Routes for auth
-Route::group(['prefix' => 'auth'], function () {
-    Route::post('login', 'AuthController@login');
+Route::group(['prefix' => 'v1'], function () {
+
+    // post controller
+    Route::get('posts', 'PostController@index');
+    Route::get('posts/{post}', 'PostController@show');
+
     Route::group(['middleware' => 'auth:api'], function() {
-        Route::get('logout', 'AuthController@logout');
-        Route::get('user', 'AuthController@user');
+        Route::post('posts', 'PostController@store');
+        Route::post('posts/{post}', 'PostController@update');
+        Route::delete('posts/{post}', 'PostController@delete');
     });
+  
+    // Routes for auth
+    Route::group(['prefix' => 'auth'], function () {
+        Route::post('login', 'AuthController@login');
+        Route::group(['middleware' => 'auth:api'], function() {
+            Route::get('logout', 'AuthController@logout');
+        });
+    });    
 });
+
+
+
+
