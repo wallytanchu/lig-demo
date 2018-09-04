@@ -35,15 +35,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-       
-
         try {
-            $post =  Post::create($request->except('photo'));
-
-            // do we have an image to process?
-            if($request->image){
-                $post = $this->save_image($request, $post);
+            if(!$request->image){
+                throw "Missing image";
             }
+            $post =  Post::create($request->except('photo'));
+            $post = $this->save_image($request, $post);
 
             $response = array(
                 'reason' => $post,
