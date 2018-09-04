@@ -1,0 +1,16 @@
+create database bloglig;
+create user 'liguser'@'localhost' identified by 'D3?"4kJTe_yn#EdE'
+grant usage on ligblog.* TO 'liguser'@'localhost' Identified by 'D3?"4kJTe_yn#EdE';
+grant ALL privileges on ligblog.* to 'liguser'@'%';
+grant all privileges on ligblog.* to 'liguser'@'localhost';
+flush privileges;
+
+
+
+
+-- for Laravel Passport
+php artisan passport:install
+
+
+-- for production
+php artisan passport:keys
