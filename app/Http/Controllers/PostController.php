@@ -35,18 +35,20 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
-        try {
-            if(!$request->image){
-                throw "Missing image";
+
+         try {
+
+            if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
+                throw "Form is empty";
             }
             $post =  Post::create($request->except('photo'));
             $post = $this->save_image($request, $post);
-
+    
             $response = array(
                 'reason' => $post,
                 'statusCode' => 201
             );
+            
 
         } catch(\Exception $ex) {
             $response = array(
@@ -69,6 +71,10 @@ class PostController extends Controller
         
 
         try {
+
+            if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
+                throw "Form is empty";
+            }
             $post->update($request->except('photo'));
 
             // do we have an image to process?
