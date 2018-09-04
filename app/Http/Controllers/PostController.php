@@ -35,6 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        
         try {
             if(!$request->image){
                 throw "Missing image";
