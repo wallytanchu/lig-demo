@@ -173,14 +173,27 @@ var settings = {
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "POST",
     "headers": {
-        "accept": "application/json"
-        "Authorization": "Bearer 
+        "accept": "application/json",
+        "Authorization": "{{token_type}} {{access_token}}" 
     }
 }
 
 $.ajax(settings).done(function (response) {
     console.log(response);
 });
+```
+
+> Example response:
+
+```json
+{
+    "title": "Test Blog 7",
+    "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+    "updated_at": "2018-09-05 07:01:21",
+    "created_at": "2018-09-05 07:01:21",
+    "id": 10,
+    "photo": "blog/f74560b0d46cb11.jpg"
+}
 ```
 
 
@@ -207,7 +220,8 @@ var settings = {
     "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "POST",
     "headers": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "{{token_type}} {{access_token}}" 
     }
 }
 
@@ -215,6 +229,20 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 ```
+
+> Example response:
+
+```json
+{
+    "title": "Test Blog 7",
+    "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+    "updated_at": "2018-09-05 07:01:21",
+    "created_at": "2018-09-05 07:01:21",
+    "id": 10,
+    "photo": "blog/f74560b0d46cb11.jpg"
+}
+```
+
 
 
 ### HTTP Request
@@ -280,6 +308,16 @@ var settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
 });
+```
+
+> Example response:
+
+```json
+{
+     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM1MTExMmY1NDU5ZDBiNTU3YTViODVlOTQ5MDU5MmVjZGU0ZTA3YWMzMzNjMDM0NWFkODNjOTRlZTNiMzZkYWFhYzc5MmU0Y2I3YmQxNDU2In0.eyJhdWQiOiIxIiwianRpIjoiMzUxMTEyZjU0NTlkMGI1NTdhNWI4NWU5NDkwNTkyZWNkZTRlMDdhYzMzM2MwMzQ1YWQ4M2M5NGVlM2IzNmRhYWFjNzkyZTRjYjdiZDE0NTYiLCJpYXQiOjE1MzYxMzA2OTgsIm5iZiI6MTUzNjEzMDY5OCwiZXhwIjoxNTY3NjY2Njk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QX44SmFSTA3pDnSdDR-Zq5PpjIwqEgst69kKTXsef82tFLqwwUm_1nsaUilqKkHaPNbVoFsPMu8LjisM_S0I2KYE_qKvKAdBMZMKZiVrLmq7T1DppoLKKv_eyAK8fsUw22OUgb-FLjEsTG3Hqnzbl_8lKtXSGFvoF2NQVrsVjwLNBt1CTGR0F8DQXfidUkqL7JuHLN7a9pL9Qoa2i8z12DuT3VYCuvKu26xxEq4ApwcIxGh-2S-v1fv-d7pXNtvoNNcHzzdCcHtPbrwuWHjoQBfJzaTERfwXFy3ivHQiPA23v02Abuuh3yUlSJ27i2l9L9lFJWZufrVKgSqvVWEd5kLUYGlcPUm3SbVT4iEZMiq-T0IppXnjhiS-jtYnRsVwwk4uP71sRO0zkucw8Hdkw0Aw5W9AYZkZuuLH29Og2090kKwrVp1Hbt52uob9pECpFHXgSCKPnDY_KJqJpVVVuF5m3bTYf8mnGDr5cL9QvXu0_oUVFrriSDSq9H6SHUXKlNlFAtxKA5QXXbLm6BFh1KnkYBwSoVUpFAKwb9N89R6-vkrmSxCLR8JMCga2VxhOCdwTUGF4MRVjTJsKVc85n2F6yrBjGQhJwJ3ln_AV3dA794mS1MrdRssn9jl6tWn9C2LWb2JFVzxR9TElafpv-7EhVc5n1lBNKSJmWqPyvzQ",
+    "token_type": "Bearer",
+    "expires_at": "2019-09-05 06:58:18"
+}
 ```
 
 
