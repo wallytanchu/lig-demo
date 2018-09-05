@@ -54,15 +54,13 @@ class PostController extends Controller
             $post =  Post::create($request->except('photo'));
             $post = $this->save_image($request, $post);
     
-            $response = array(
-                'message' => $post
-            );
+            $response = $post;
             
 
         } catch(\Exception $ex) {
             $statusCode = 500;
             $response = array(
-                'message' => 'Error'
+                'reason' => 'Error'
             );
         }
 
@@ -90,14 +88,12 @@ class PostController extends Controller
             if($request->image){
                 $post = $this->save_image($request, $post);
             }
-            $response = array(
-                'reason' => $post
-            );
+            $response = $post;
 
         } catch(\Exception $ex) {
             $statusCode = 500;
             $response = array(
-                'message' => 'Error'
+                'reason' => 'Error'
             );
         }
 
@@ -112,9 +108,13 @@ class PostController extends Controller
      */
     public function delete(Post $post)
     {
-        $post->delete();
 
-        return response()->json(null, 204);
+        try {
+            $post->delete();
+            return response()->json(null, 204);
+        } catch(\Exception $ex) {
+            return response()->json(["message" => 'Error'], 200);
+        }
     }
 
     /**
