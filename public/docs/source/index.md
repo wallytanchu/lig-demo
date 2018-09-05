@@ -38,8 +38,7 @@ var settings = {
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "GET",
     "headers": {
-        "accept": "application/json",
-        "Authorization": "{token_type} {access_token}"
+        "accept": "application/json"
     }
 }
 

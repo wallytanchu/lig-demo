@@ -130,6 +130,23 @@ $.ajax(settings).done(function (response) {
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/posts</code></p>
+<h3 id="Query_Parameters"><a href="#Query_Parameters" class="headerlink" title="Query Parameters"></a>Query Parameters</h3>
+<table>
+    <thead>
+    <tr>
+    <th>Parameter</th>
+    <th>Default</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>page</td>
+    <td>1</td>
+    <td>Retrieves the blog post of the page</td>
+    </tr>
+    </tbody>
+    </table>
 <!-- END_d4ac54c52158ea2dc79730cfac8d8a3f -->
 <!-- START_dfff1d9b6a3c668b128436efa4e175c6 -->
 <h2>Read a post entry</h2>
@@ -164,6 +181,21 @@ $.ajax(settings).done(function (response) {
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/posts/{post}</code></p>
+<h3 id="URL_Parameters"><a href="#URL_Parameters" class="headerlink" title="URL Parameters"></a>URL Parameters</h3>
+<table>
+    <thead>
+    <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>ID</td>
+    <td>The ID of the blog post</td>
+    </tr>
+    </tbody>
+    </table>
 <!-- END_dfff1d9b6a3c668b128436efa4e175c6 -->
 <!-- START_8c8dee3dc083fa8a3bbfd25342a7c1b6 -->
 <h2>Creates a post entry</h2>
@@ -178,7 +210,8 @@ $.ajax(settings).done(function (response) {
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "POST",
     "headers": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhhN2ZjYmYzZjZkOGFkMTVkYTNlODQyZmQyYWU0ZWM2OGRiNWIyMTM4ZmU0N2Q0MjIwM2ViM2M5YzZiNjEzOWUyMDg5NTI0NDAwOGEwMjk3In0.eyJhdWQiOiIxIiwianRpIjoiOGE3ZmNiZjNmNmQ4YWQxNWRhM2U4NDJmZDJhZTRlYzY4ZGI1YjIxMzhmZTQ3ZDQyMjAzZWIzYzljNmI2MTM5ZTIwODk1MjQ0MDA4YTAyOTciLCJpYXQiOjE1MzYxMzE4MjAsIm5iZiI6MTUzNjEzMTgyMCwiZXhwIjoxNTY3NjY3ODIwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uL0ucpKwSi5BOsBS4TMqQ_J9FsqiRnspJo52PzHqtM4PKxT3pWAQwxhQakjDGx5rMZqZndpNahnhAB8ltW6zHcYMIPWZRMVaA60WY2yUemb_NRFkmvkIDmK4zv7mEsrwf_GUuzvC1aF9goY6a7jkkF4bNIyQMBId7GJP1PiIUu93oRFAIWsXLO3lslUziQwCa2NmihfOv8xluZjsKYuEfUr1qmDW0S-zKZssbx2vh0dC6FV0NTyXr2m-wKIblKiid2oZUrDqCJCzWtubZxP5VOwdNYR9Qh0GFtLqC8v426ySL4pj_l9IeQAe6bhXLRSG48RD1O1e6Hiw6qyR4DOS-rsItdHQ9hZiOhwD9wX7ZoBFWxTkQeV4Q-sKHjcxtV5GZ0GJf5akYhAKE3iJrbb0yNru98Iwh0nBriC1zfX8gEUS-EAM7O-G03oYLML-A15fOAsxJHaroi5ST9u-rpHdjUEHG-dgqkQxz2pJTuM0DuTSxOwDWv2J_-sUWIEX1JGdZKN4FBXZJ7VxXij2VEPFYuNj7G3MQeFEjLK0ic3ZDgSnER1Kat7gzkf82a5PxyzgAZCZ__YbfWP2FIoWyMeTZ7llIh2xGaJ7ZNCL5irCx8FuISUuv0DD68Eq2UvkIqq0ucT-vPGbCQwnq2rNSEDX4A0_fZKJBBr-yb5DJ9pqO4o"
     }
 }
 
@@ -198,6 +231,29 @@ $.ajax(settings).done(function (response) {
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/posts</code></p>
+<h3 id="Post_Parameters"><a href="#Post_Parameters" class="headerlink" title="Post Parameters"></a>Post Parameters</h3>
+<table>
+    <thead>
+    <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>title</td>
+    <td>Title of the blog post</td>
+    </tr>
+    <tr>
+    <td>inquiry</td>
+    <td>Content of the blog post</td>
+    </tr>
+    <tr>
+    <td>image</td>
+    <td>Display image for the blog post</td>
+    </tr>
+    </tbody>
+    </table>
 <!-- END_8c8dee3dc083fa8a3bbfd25342a7c1b6 -->
 <!-- START_0c7bc27199640af0ab59d24423cfcb5b -->
 <h2>Updates a post entry</h2>
@@ -212,7 +268,8 @@ $.ajax(settings).done(function (response) {
     "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "POST",
     "headers": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhhN2ZjYmYzZjZkOGFkMTVkYTNlODQyZmQyYWU0ZWM2OGRiNWIyMTM4ZmU0N2Q0MjIwM2ViM2M5YzZiNjEzOWUyMDg5NTI0NDAwOGEwMjk3In0.eyJhdWQiOiIxIiwianRpIjoiOGE3ZmNiZjNmNmQ4YWQxNWRhM2U4NDJmZDJhZTRlYzY4ZGI1YjIxMzhmZTQ3ZDQyMjAzZWIzYzljNmI2MTM5ZTIwODk1MjQ0MDA4YTAyOTciLCJpYXQiOjE1MzYxMzE4MjAsIm5iZiI6MTUzNjEzMTgyMCwiZXhwIjoxNTY3NjY3ODIwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uL0ucpKwSi5BOsBS4TMqQ_J9FsqiRnspJo52PzHqtM4PKxT3pWAQwxhQakjDGx5rMZqZndpNahnhAB8ltW6zHcYMIPWZRMVaA60WY2yUemb_NRFkmvkIDmK4zv7mEsrwf_GUuzvC1aF9goY6a7jkkF4bNIyQMBId7GJP1PiIUu93oRFAIWsXLO3lslUziQwCa2NmihfOv8xluZjsKYuEfUr1qmDW0S-zKZssbx2vh0dC6FV0NTyXr2m-wKIblKiid2oZUrDqCJCzWtubZxP5VOwdNYR9Qh0GFtLqC8v426ySL4pj_l9IeQAe6bhXLRSG48RD1O1e6Hiw6qyR4DOS-rsItdHQ9hZiOhwD9wX7ZoBFWxTkQeV4Q-sKHjcxtV5GZ0GJf5akYhAKE3iJrbb0yNru98Iwh0nBriC1zfX8gEUS-EAM7O-G03oYLML-A15fOAsxJHaroi5ST9u-rpHdjUEHG-dgqkQxz2pJTuM0DuTSxOwDWv2J_-sUWIEX1JGdZKN4FBXZJ7VxXij2VEPFYuNj7G3MQeFEjLK0ic3ZDgSnER1Kat7gzkf82a5PxyzgAZCZ__YbfWP2FIoWyMeTZ7llIh2xGaJ7ZNCL5irCx8FuISUuv0DD68Eq2UvkIqq0ucT-vPGbCQwnq2rNSEDX4A0_fZKJBBr-yb5DJ9pqO4o"
     }
 }
 
@@ -232,6 +289,29 @@ $.ajax(settings).done(function (response) {
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/posts/{post}</code></p>
+<h3 id="Post_Parameters"><a href="#Post_Parameters" class="headerlink" title="Post Parameters"></a>Post Parameters</h3>
+<table>
+    <thead>
+    <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>title</td>
+    <td>Title of the blog post</td>
+    </tr>
+    <tr>
+    <td>inquiry</td>
+    <td>Content of the blog post</td>
+    </tr>
+    <tr>
+    <td>image</td>
+    <td>Display image for the blog post</td>
+    </tr>
+    </tbody>
+    </table>
 <!-- END_0c7bc27199640af0ab59d24423cfcb5b -->
 <!-- START_b59514618939469a1367e18797eec2b3 -->
 <h2>Removes a post entry</h2>
@@ -269,7 +349,8 @@ $.ajax(settings).done(function (response) {
     "url": "http://ligblog.tk/api/v1/auth/login",
     "method": "POST",
     "headers": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhhN2ZjYmYzZjZkOGFkMTVkYTNlODQyZmQyYWU0ZWM2OGRiNWIyMTM4ZmU0N2Q0MjIwM2ViM2M5YzZiNjEzOWUyMDg5NTI0NDAwOGEwMjk3In0.eyJhdWQiOiIxIiwianRpIjoiOGE3ZmNiZjNmNmQ4YWQxNWRhM2U4NDJmZDJhZTRlYzY4ZGI1YjIxMzhmZTQ3ZDQyMjAzZWIzYzljNmI2MTM5ZTIwODk1MjQ0MDA4YTAyOTciLCJpYXQiOjE1MzYxMzE4MjAsIm5iZiI6MTUzNjEzMTgyMCwiZXhwIjoxNTY3NjY3ODIwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uL0ucpKwSi5BOsBS4TMqQ_J9FsqiRnspJo52PzHqtM4PKxT3pWAQwxhQakjDGx5rMZqZndpNahnhAB8ltW6zHcYMIPWZRMVaA60WY2yUemb_NRFkmvkIDmK4zv7mEsrwf_GUuzvC1aF9goY6a7jkkF4bNIyQMBId7GJP1PiIUu93oRFAIWsXLO3lslUziQwCa2NmihfOv8xluZjsKYuEfUr1qmDW0S-zKZssbx2vh0dC6FV0NTyXr2m-wKIblKiid2oZUrDqCJCzWtubZxP5VOwdNYR9Qh0GFtLqC8v426ySL4pj_l9IeQAe6bhXLRSG48RD1O1e6Hiw6qyR4DOS-rsItdHQ9hZiOhwD9wX7ZoBFWxTkQeV4Q-sKHjcxtV5GZ0GJf5akYhAKE3iJrbb0yNru98Iwh0nBriC1zfX8gEUS-EAM7O-G03oYLML-A15fOAsxJHaroi5ST9u-rpHdjUEHG-dgqkQxz2pJTuM0DuTSxOwDWv2J_-sUWIEX1JGdZKN4FBXZJ7VxXij2VEPFYuNj7G3MQeFEjLK0ic3ZDgSnER1Kat7gzkf82a5PxyzgAZCZ__YbfWP2FIoWyMeTZ7llIh2xGaJ7ZNCL5irCx8FuISUuv0DD68Eq2UvkIqq0ucT-vPGbCQwnq2rNSEDX4A0_fZKJBBr-yb5DJ9pqO4o"
     }
 }
 
@@ -278,6 +359,25 @@ $.ajax(settings).done(function (response) {
 });</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/auth/login</code></p>
+<h3 id="Post_Parameters"><a href="#Post_Parameters" class="headerlink" title="Post Parameters"></a>Post Parameters</h3>
+<table>
+    <thead>
+    <tr>
+    <th>Parameter</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>email</td>
+    <td>Email address of the admin</td>
+    </tr>
+    <tr>
+    <td>password</td>
+    <td>Password for the admin account</td>
+    </tr>
+    </tbody>
+    </table>
 <!-- END_2be1f0e022faf424f18f30275e61416e -->
       </div>
       <div class="dark-box">
