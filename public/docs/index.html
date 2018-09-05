@@ -62,7 +62,8 @@
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "GET",
     "headers": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "{token_type} {access_token}"
     }
 }
 
@@ -129,26 +130,9 @@ $.ajax(settings).done(function (response) {
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/posts</code></p>
-<h3 id="Query_Parameters"><a href="#Query_Parameters" class="headerlink" title="Query Parameters"></a>Query Parameters</h3>
-<table>
-    <thead>
-    <tr>
-    <th>Parameter</th>
-    <th>Default</th>
-    <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>page</td>
-    <td>1</td>
-    <td>page to list the blog post</td>
-    </tr>
-    </tbody>
-    </table>
 <!-- END_d4ac54c52158ea2dc79730cfac8d8a3f -->
-<!-- START_d4ac54c52158ea2dc79730cfac8d8a3f -->
-<h3>HTTP Request</h3>
+<!-- START_dfff1d9b6a3c668b128436efa4e175c6 -->
+<h2>Read a post entry</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -157,7 +141,7 @@ $.ajax(settings).done(function (response) {
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://ligblog.tk/api/v1/posts",
+    "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -178,6 +162,7 @@ $.ajax(settings).done(function (response) {
     "id": 10,
     "photo": "blog/f74560b0d46cb11.jpg"
 }</code></pre>
+<h3>HTTP Request</h3>
 <p><code>GET api/v1/posts/{post}</code></p>
 <!-- END_dfff1d9b6a3c668b128436efa4e175c6 -->
 <!-- START_8c8dee3dc083fa8a3bbfd25342a7c1b6 -->
@@ -193,8 +178,7 @@ $.ajax(settings).done(function (response) {
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "POST",
     "headers": {
-        "accept": "application/json",
-        "Authorization": "{{token_type}} {{access_token}}" 
+        "accept": "application/json"
     }
 }
 
@@ -228,8 +212,7 @@ $.ajax(settings).done(function (response) {
     "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "POST",
     "headers": {
-        "accept": "application/json",
-        "Authorization": "{{token_type}} {{access_token}}" 
+        "accept": "application/json"
     }
 }
 
@@ -293,40 +276,9 @@ $.ajax(settings).done(function (response) {
 $.ajax(settings).done(function (response) {
     console.log(response);
 });</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM1MTExMmY1NDU5ZDBiNTU3YTViODVlOTQ5MDU5MmVjZGU0ZTA3YWMzMzNjMDM0NWFkODNjOTRlZTNiMzZkYWFhYzc5MmU0Y2I3YmQxNDU2In0.eyJhdWQiOiIxIiwianRpIjoiMzUxMTEyZjU0NTlkMGI1NTdhNWI4NWU5NDkwNTkyZWNkZTRlMDdhYzMzM2MwMzQ1YWQ4M2M5NGVlM2IzNmRhYWFjNzkyZTRjYjdiZDE0NTYiLCJpYXQiOjE1MzYxMzA2OTgsIm5iZiI6MTUzNjEzMDY5OCwiZXhwIjoxNTY3NjY2Njk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QX44SmFSTA3pDnSdDR-Zq5PpjIwqEgst69kKTXsef82tFLqwwUm_1nsaUilqKkHaPNbVoFsPMu8LjisM_S0I2KYE_qKvKAdBMZMKZiVrLmq7T1DppoLKKv_eyAK8fsUw22OUgb-FLjEsTG3Hqnzbl_8lKtXSGFvoF2NQVrsVjwLNBt1CTGR0F8DQXfidUkqL7JuHLN7a9pL9Qoa2i8z12DuT3VYCuvKu26xxEq4ApwcIxGh-2S-v1fv-d7pXNtvoNNcHzzdCcHtPbrwuWHjoQBfJzaTERfwXFy3ivHQiPA23v02Abuuh3yUlSJ27i2l9L9lFJWZufrVKgSqvVWEd5kLUYGlcPUm3SbVT4iEZMiq-T0IppXnjhiS-jtYnRsVwwk4uP71sRO0zkucw8Hdkw0Aw5W9AYZkZuuLH29Og2090kKwrVp1Hbt52uob9pECpFHXgSCKPnDY_KJqJpVVVuF5m3bTYf8mnGDr5cL9QvXu0_oUVFrriSDSq9H6SHUXKlNlFAtxKA5QXXbLm6BFh1KnkYBwSoVUpFAKwb9N89R6-vkrmSxCLR8JMCga2VxhOCdwTUGF4MRVjTJsKVc85n2F6yrBjGQhJwJ3ln_AV3dA794mS1MrdRssn9jl6tWn9C2LWb2JFVzxR9TElafpv-7EhVc5n1lBNKSJmWqPyvzQ",
-    "token_type": "Bearer",
-    "expires_at": "2019-09-05 06:58:18"
-}</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/auth/login</code></p>
 <!-- END_2be1f0e022faf424f18f30275e61416e -->
-<!-- START_e45d6bc29c8c4bf3ee565c811719cf0e -->
-<h2>Logout user (Revoke the token)</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://ligblog.tk/api/v1/auth/logout" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://ligblog.tk/api/v1/auth/logout",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/auth/logout</code></p>
-<!-- END_e45d6bc29c8c4bf3ee565c811719cf0e -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

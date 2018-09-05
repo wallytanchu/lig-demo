@@ -38,7 +38,8 @@ var settings = {
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "GET",
     "headers": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "{token_type} {access_token}"
     }
 }
 
@@ -106,14 +107,16 @@ $.ajax(settings).done(function (response) {
     "total": 6
 }
 ```
+
 ### HTTP Request
 `GET api/v1/posts`
 
 
 <!-- END_d4ac54c52158ea2dc79730cfac8d8a3f -->
 
-<!-- START_d4ac54c52158ea2dc79730cfac8d8a3f -->
-### HTTP Request
+<!-- START_dfff1d9b6a3c668b128436efa4e175c6 -->
+## Read a post entry
+
 > Example request:
 
 ```bash
@@ -125,7 +128,7 @@ curl -X GET "http://ligblog.tk/api/v1/posts/{post}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://ligblog.tk/api/v1/posts",
+    "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -136,6 +139,7 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 ```
+
 > Example response:
 
 ```json
@@ -149,9 +153,8 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-
+### HTTP Request
 `GET api/v1/posts/{post}`
-
 
 
 <!-- END_dfff1d9b6a3c668b128436efa4e175c6 -->
@@ -173,8 +176,7 @@ var settings = {
     "url": "http://ligblog.tk/api/v1/posts",
     "method": "POST",
     "headers": {
-        "accept": "application/json",
-        "Authorization": "{{token_type}} {{access_token}}" 
+        "accept": "application/json"
     }
 }
 
@@ -182,7 +184,6 @@ $.ajax(settings).done(function (response) {
     console.log(response);
 });
 ```
-
 > Example response:
 
 ```json
@@ -220,8 +221,7 @@ var settings = {
     "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "POST",
     "headers": {
-        "accept": "application/json",
-        "Authorization": "{{token_type}} {{access_token}}" 
+        "accept": "application/json"
     }
 }
 
@@ -242,7 +242,6 @@ $.ajax(settings).done(function (response) {
     "photo": "blog/f74560b0d46cb11.jpg"
 }
 ```
-
 
 
 ### HTTP Request
@@ -308,16 +307,6 @@ var settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
 });
-```
-
-> Example response:
-
-```json
-{
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM1MTExMmY1NDU5ZDBiNTU3YTViODVlOTQ5MDU5MmVjZGU0ZTA3YWMzMzNjMDM0NWFkODNjOTRlZTNiMzZkYWFhYzc5MmU0Y2I3YmQxNDU2In0.eyJhdWQiOiIxIiwianRpIjoiMzUxMTEyZjU0NTlkMGI1NTdhNWI4NWU5NDkwNTkyZWNkZTRlMDdhYzMzM2MwMzQ1YWQ4M2M5NGVlM2IzNmRhYWFjNzkyZTRjYjdiZDE0NTYiLCJpYXQiOjE1MzYxMzA2OTgsIm5iZiI6MTUzNjEzMDY5OCwiZXhwIjoxNTY3NjY2Njk4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QX44SmFSTA3pDnSdDR-Zq5PpjIwqEgst69kKTXsef82tFLqwwUm_1nsaUilqKkHaPNbVoFsPMu8LjisM_S0I2KYE_qKvKAdBMZMKZiVrLmq7T1DppoLKKv_eyAK8fsUw22OUgb-FLjEsTG3Hqnzbl_8lKtXSGFvoF2NQVrsVjwLNBt1CTGR0F8DQXfidUkqL7JuHLN7a9pL9Qoa2i8z12DuT3VYCuvKu26xxEq4ApwcIxGh-2S-v1fv-d7pXNtvoNNcHzzdCcHtPbrwuWHjoQBfJzaTERfwXFy3ivHQiPA23v02Abuuh3yUlSJ27i2l9L9lFJWZufrVKgSqvVWEd5kLUYGlcPUm3SbVT4iEZMiq-T0IppXnjhiS-jtYnRsVwwk4uP71sRO0zkucw8Hdkw0Aw5W9AYZkZuuLH29Og2090kKwrVp1Hbt52uob9pECpFHXgSCKPnDY_KJqJpVVVuF5m3bTYf8mnGDr5cL9QvXu0_oUVFrriSDSq9H6SHUXKlNlFAtxKA5QXXbLm6BFh1KnkYBwSoVUpFAKwb9N89R6-vkrmSxCLR8JMCga2VxhOCdwTUGF4MRVjTJsKVc85n2F6yrBjGQhJwJ3ln_AV3dA794mS1MrdRssn9jl6tWn9C2LWb2JFVzxR9TElafpv-7EhVc5n1lBNKSJmWqPyvzQ",
-    "token_type": "Bearer",
-    "expires_at": "2019-09-05 06:58:18"
-}
 ```
 
 
