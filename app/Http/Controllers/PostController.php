@@ -22,7 +22,7 @@ class PostController extends Controller
     }
     
     /**
-     * Removes a post entry
+     * Read a post entry
      * 
      * @param Post $post
      * @return 

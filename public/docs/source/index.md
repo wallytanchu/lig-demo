@@ -106,15 +106,50 @@ $.ajax(settings).done(function (response) {
     "total": 6
 }
 ```
-
 ### HTTP Request
 `GET api/v1/posts`
 
 
-
 <!-- END_d4ac54c52158ea2dc79730cfac8d8a3f -->
 
+<!-- START_d4ac54c52158ea2dc79730cfac8d8a3f -->
 ### HTTP Request
+> Example request:
+
+```bash
+curl -X GET "http://ligblog.tk/api/v1/posts/{post}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://ligblog.tk/api/v1/posts",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+> Example response:
+
+```json
+{
+    "title": "Test Blog 7",
+    "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+    "updated_at": "2018-09-05 07:01:21",
+    "created_at": "2018-09-05 07:01:21",
+    "id": 10,
+    "photo": "blog/f74560b0d46cb11.jpg"
+}
+```
+
+
 `GET api/v1/posts/{post}`
 
 
@@ -291,36 +326,4 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_2be1f0e022faf424f18f30275e61416e -->
-
-<!-- START_e45d6bc29c8c4bf3ee565c811719cf0e -->
-## Logout user (Revoke the token)
-
-> Example request:
-
-```bash
-curl -X GET "http://ligblog.tk/api/v1/auth/logout" \
--H "Accept: application/json"
-```
-
-```javascript
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://ligblog.tk/api/v1/auth/logout",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
-```
-
-### HTTP Request
-`GET api/v1/auth/logout`
-
-
-<!-- END_e45d6bc29c8c4bf3ee565c811719cf0e -->
 
