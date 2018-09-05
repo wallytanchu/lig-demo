@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         try {
-            $postlist =  Post::orderby('created_at', 'desc')->paginate(5);
+            $postlist =  Post::orderby('created_at', 'desc')->orderby('id','desc')->paginate(5);
             return response()->json($postlist, 200);
         } catch(\Exception $ex) {
             return response()->json(["message" => 'Error'], 200);
