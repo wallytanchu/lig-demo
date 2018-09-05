@@ -16,7 +16,7 @@ toc_footers:
 # Info
 
 Welcome to the generated API reference.
-[Get Postman Collection](http://localhost/docs/collection.json)
+[Get Postman Collection](http://ligblog.tk/docs/collection.json)
 
 <!-- END_INFO -->
 
@@ -27,7 +27,7 @@ Welcome to the generated API reference.
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/posts" \
+curl -X GET "http://ligblog.tk/api/v1/posts" \
 -H "Accept: application/json"
 ```
 
@@ -35,7 +35,7 @@ curl -X GET "http://localhost/api/v1/posts" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/posts",
+    "url": "http://ligblog.tk/api/v1/posts",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -51,7 +51,59 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "message": "Server Error"
+    "current_page": 1,
+    "data": [
+        {
+            "id": 6,
+            "title": "Test Blog 6",
+            "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+            "photo": "blog/0169db9e5979fe1.jpg",
+            "created_at": "2018-09-04 16:18:00",
+            "updated_at": "2018-09-04 16:18:00"
+        },
+        {
+            "id": 5,
+            "title": "Test Blog 5",
+            "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+            "photo": "blog/3625d8ccce80647.jpg",
+            "created_at": "2018-09-04 16:17:50",
+            "updated_at": "2018-09-04 16:17:51"
+        },
+        {
+            "id": 4,
+            "title": "Test Blog 4",
+            "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+            "photo": "blog/48f3c1e99ee8277.jpg",
+            "created_at": "2018-09-04 16:17:47",
+            "updated_at": "2018-09-04 16:18:23"
+        },
+        {
+            "id": 3,
+            "title": "Test Blog 3",
+            "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+            "photo": "blog/6370f1f9aa5696e.jpg",
+            "created_at": "2018-09-04 16:17:34",
+            "updated_at": "2018-09-04 16:18:53"
+        },
+        {
+            "id": 2,
+            "title": "Test Blog 2",
+            "inquiry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum lorem erat, sed ultrices est luctus nec. Nam tempus elementum velit quis gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam lorem sem, venenatis ut ante eget, tristique suscipit nisl. Mauris venenatis ut lacus ac ullamcorper. Nullam vestibulum elementum ligula eu venenatis. Pellentesque sollicitudin, orci eget vehicula pellentesque, leo massa facilisis neque, at gravida lectus neque non tellus. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vulputate dictum ligula, quis commodo urna viverra sed.",
+            "photo": "blog/03bbdc2bd37c128.jpg",
+            "created_at": "2018-09-04 16:17:22",
+            "updated_at": "2018-09-04 16:18:33"
+        }
+    ],
+    "first_page_url": "http://ligblog.tk/api/v1/posts?page=1",
+    "from": 1,
+    "last_page": 2,
+    "last_page_url": "http://ligblog.tk/api/v1/posts?page=2",
+    "next_page_url": "http://ligblog.tk/api/v1/posts?page=2",
+    "path": "http://ligblog.tk/api/v1/posts",
+    "per_page": 5,
+    "prev_page_url": null,
+    "to": 5,
+    "total": 6
 }
 ```
 
@@ -69,7 +121,7 @@ $.ajax(settings).done(function (response) {
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/posts/{post}" \
+curl -X GET "http://ligblog.tk/api/v1/posts/{post}" \
 -H "Accept: application/json"
 ```
 
@@ -77,7 +129,7 @@ curl -X GET "http://localhost/api/v1/posts/{post}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/posts/{post}",
+    "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -93,7 +145,6 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-    "message": "Server Error"
 }
 ```
 
@@ -111,7 +162,7 @@ $.ajax(settings).done(function (response) {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/v1/posts" \
+curl -X POST "http://ligblog.tk/api/v1/posts" \
 -H "Accept: application/json"
 ```
 
@@ -119,10 +170,11 @@ curl -X POST "http://localhost/api/v1/posts" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/posts",
+    "url": "http://ligblog.tk/api/v1/posts",
     "method": "POST",
     "headers": {
         "accept": "application/json"
+        "Authorization": "Bearer 
     }
 }
 
@@ -144,7 +196,7 @@ $.ajax(settings).done(function (response) {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/v1/posts/{post}" \
+curl -X POST "http://ligblog.tk/api/v1/posts/{post}" \
 -H "Accept: application/json"
 ```
 
@@ -152,7 +204,7 @@ curl -X POST "http://localhost/api/v1/posts/{post}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/posts/{post}",
+    "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "POST",
     "headers": {
         "accept": "application/json"
@@ -177,7 +229,7 @@ $.ajax(settings).done(function (response) {
 > Example request:
 
 ```bash
-curl -X DELETE "http://localhost/api/v1/posts/{post}" \
+curl -X DELETE "http://ligblog.tk/api/v1/posts/{post}" \
 -H "Accept: application/json"
 ```
 
@@ -185,7 +237,7 @@ curl -X DELETE "http://localhost/api/v1/posts/{post}" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/posts/{post}",
+    "url": "http://ligblog.tk/api/v1/posts/{post}",
     "method": "DELETE",
     "headers": {
         "accept": "application/json"
@@ -210,7 +262,7 @@ $.ajax(settings).done(function (response) {
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/v1/auth/login" \
+curl -X POST "http://ligblog.tk/api/v1/auth/login" \
 -H "Accept: application/json"
 ```
 
@@ -218,7 +270,7 @@ curl -X POST "http://localhost/api/v1/auth/login" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/auth/login",
+    "url": "http://ligblog.tk/api/v1/auth/login",
     "method": "POST",
     "headers": {
         "accept": "application/json"
@@ -243,7 +295,7 @@ $.ajax(settings).done(function (response) {
 > Example request:
 
 ```bash
-curl -X GET "http://localhost/api/v1/auth/logout" \
+curl -X GET "http://ligblog.tk/api/v1/auth/logout" \
 -H "Accept: application/json"
 ```
 
@@ -251,7 +303,7 @@ curl -X GET "http://localhost/api/v1/auth/logout" \
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost/api/v1/auth/logout",
+    "url": "http://ligblog.tk/api/v1/auth/logout",
     "method": "GET",
     "headers": {
         "accept": "application/json"

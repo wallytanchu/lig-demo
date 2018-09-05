@@ -13,7 +13,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::orderby('created_at', 'desc')->paginate(5);
+        try {
+            $postlist =  Post::orderby('created_at', 'desc')->paginate(5);
+            return response()->json($postlist, 200);
+        } catch(\Exception $ex) {
+            return response()->json(["message" => 'Error'], 200);
+     }
     }
     
     /**
@@ -23,8 +28,13 @@ class PostController extends Controller
      * @return 
      */
     public function show(Post $post)
-    {
-        return $post;
+    {   
+        try {
+            return response()->json($post, 200);
+        } catch(\Exception $ex) {
+            return response()->json(["message" => 'Error'], 200);
+        }
+        
     }
 
     /**
@@ -37,7 +47,7 @@ class PostController extends Controller
     {
 
          try {
-
+            $statusCode = 201;
             if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
                 throw "Form is empty";
             }
@@ -45,19 +55,18 @@ class PostController extends Controller
             $post = $this->save_image($request, $post);
     
             $response = array(
-                'reason' => $post,
-                'statusCode' => 201
+                'message' => $post
             );
             
 
         } catch(\Exception $ex) {
+            $statusCode = 500;
             $response = array(
-                'reason' => 'Error',
-                'statusCode' => 500
+                'message' => 'Error'
             );
         }
 
-        return response()->json($response);
+        return response()->json($response, $statusCode);
     }
 
     /**
@@ -71,7 +80,7 @@ class PostController extends Controller
         
 
         try {
-
+            $statusCode = 200;
             if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
                 throw "Form is empty";
             }
@@ -82,18 +91,17 @@ class PostController extends Controller
                 $post = $this->save_image($request, $post);
             }
             $response = array(
-                'reason' => $post,
-                'statusCode' => 200
+                'reason' => $post
             );
 
         } catch(\Exception $ex) {
+            $statusCode = 500;
             $response = array(
-                'reason' => 'Error',
-                'statusCode' => 500
+                'message' => 'Error'
             );
         }
 
-        return response()->json($post, 200);
+        return response()->json($response, $statusCode);
     }
 
     /**
