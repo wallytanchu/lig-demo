@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ligblog - @yield('title')</title>
     <meta name="description" content="sample text,sample tex">
     <meta name="keywords" content="word1,word2,word3">
 

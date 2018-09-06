@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Admin Login' )
 @section('content')
     <!--start l-contents-->
     <div class="l-container u-clear">

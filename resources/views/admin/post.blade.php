@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', $post->title )
 @section('content')
     <!--start l-contents-->
     <div class="l-container u-clear">
