@@ -102,7 +102,7 @@ class AdminController extends Controller
          if($request->image){
             $filename = substr( md5( $post->id . '-' . time() ), 0, 15) . '.' . $request->file('image')->getClientOriginalExtension();
             $path = public_path('blog/' . $filename);
-            Image::make($request->image)->orientate()->fit(500)->save($path);
+            \Image::make($request->image)->orientate()->fit(500)->save($path);
 
             // now update the photo column on the post record
             $post->photo = 'blog/' . $filename;
