@@ -31,10 +31,20 @@ class HomeController extends Controller
      * View a post entry
      * 
      * @param Post $post
-     * @return 
+     * @return void
      */
     public function single(Post $post)
     {   
         return view('single', ['post' => $post]); 
+    }
+
+    /**
+     * Loads the archive page
+     * 
+     * @return void
+     */
+    public function archive() {
+        $list =  Post::orderby('created_at', 'desc')->orderby('id','desc')->paginate(5)->toJson();
+        return view('archive', ['list'=> json_decode($list)]);
     }
 }
