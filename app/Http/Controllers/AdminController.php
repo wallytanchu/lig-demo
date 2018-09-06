@@ -46,10 +46,14 @@ class AdminController extends Controller
      */
     public function create(Request $request)
     {
-        if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
+        // validate data
+        if($this->validate_post($request)) {
             return redirect()->back()->with('message', 'Error');
         }
+        
+        // create record
         $post =  Post::create($request->except('photo'));
+        // upload image
         $post = $this->save_image($request, $post);
 
         $response = $post;
@@ -76,10 +80,12 @@ class AdminController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        // validate
-        if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
+        // validate data
+        if($this->validate_post($request)) {
             return redirect()->back()->with('message', 'Error');
         }
+
+        // update post record
         $post->update($request->except('photo'));
 
         // do we have an image to process?
@@ -110,5 +116,22 @@ class AdminController extends Controller
         }
 
         return $post;
+    }
+
+    private function validate_post($request)
+    {
+        // validation for atleast one must not be empty
+        if(trim($request->inquiry) == null && trim($request->title) == null && !$request->image){
+            return true;
+        }
+
+        // validation for file upload type
+        $validator = \Validator::make($request->all(), [
+            'image' => 'mimes:jpeg,png,bmp,tiff'] );
+        if($validator->fails()) {
+            return true;
+        }
+
+        return false;
     }
 }
