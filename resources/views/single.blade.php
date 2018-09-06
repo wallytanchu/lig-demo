@@ -1,5 +1,7 @@
 @extends('layouts.public')
-@section('title', if($post) $post->title )
+@$title = '';
+@if($post) $title = $post->title @endif
+@section('title', $title )
 @section('content')
         <!--start l-main-->
         <main class="l-main js-main">
