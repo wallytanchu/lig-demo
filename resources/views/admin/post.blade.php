@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-@section('title', $post->title )
+@php ($title = 'Create Post')
+@if($post) @php ($title = 'Update Post') @endif
+@section('title', $title )
 @section('content')
     <!--start l-contents-->
     <div class="l-container u-clear">
