@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@$title = '';
+@php ($title = '')
 @if($post) $title = $post->title @endif
 @section('title', $title )
 @section('content')
