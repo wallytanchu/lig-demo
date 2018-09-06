@@ -13,7 +13,7 @@
                 <label for="password" class="form-title">PASSWORD</label>
                 <input type="password" id="password" name="password" class="input input-text">
                 <label for="submit" class="form-button">
-                @if ($errors)
+                @if (count($errors))
                 <div class="alert alert-danger">
                         <strong>Error</strong>
                 </div>
