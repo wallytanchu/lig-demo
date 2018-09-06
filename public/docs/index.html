@@ -63,7 +63,7 @@
     "method": "GET",
     "headers": {
         "accept": "application/json",
-        "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhhN2ZjYmYzZjZkOGFkMTVkYTNlODQyZmQyYWU0ZWM2OGRiNWIyMTM4ZmU0N2Q0MjIwM2ViM2M5YzZiNjEzOWUyMDg5NTI0NDAwOGEwMjk3In0.eyJhdWQiOiIxIiwianRpIjoiOGE3ZmNiZjNmNmQ4YWQxNWRhM2U4NDJmZDJhZTRlYzY4ZGI1YjIxMzhmZTQ3ZDQyMjAzZWIzYzljNmI2MTM5ZTIwODk1MjQ0MDA4YTAyOTciLCJpYXQiOjE1MzYxMzE4MjAsIm5iZiI6MTUzNjEzMTgyMCwiZXhwIjoxNTY3NjY3ODIwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.uL0ucpKwSi5BOsBS4TMqQ_J9FsqiRnspJo52PzHqtM4PKxT3pWAQwxhQakjDGx5rMZqZndpNahnhAB8ltW6zHcYMIPWZRMVaA60WY2yUemb_NRFkmvkIDmK4zv7mEsrwf_GUuzvC1aF9goY6a7jkkF4bNIyQMBId7GJP1PiIUu93oRFAIWsXLO3lslUziQwCa2NmihfOv8xluZjsKYuEfUr1qmDW0S-zKZssbx2vh0dC6FV0NTyXr2m-wKIblKiid2oZUrDqCJCzWtubZxP5VOwdNYR9Qh0GFtLqC8v426ySL4pj_l9IeQAe6bhXLRSG48RD1O1e6Hiw6qyR4DOS-rsItdHQ9hZiOhwD9wX7ZoBFWxTkQeV4Q-sKHjcxtV5GZ0GJf5akYhAKE3iJrbb0yNru98Iwh0nBriC1zfX8gEUS-EAM7O-G03oYLML-A15fOAsxJHaroi5ST9u-rpHdjUEHG-dgqkQxz2pJTuM0DuTSxOwDWv2J_-sUWIEX1JGdZKN4FBXZJ7VxXij2VEPFYuNj7G3MQeFEjLK0ic3ZDgSnER1Kat7gzkf82a5PxyzgAZCZ__YbfWP2FIoWyMeTZ7llIh2xGaJ7ZNCL5irCx8FuISUuv0DD68Eq2UvkIqq0ucT-vPGbCQwnq2rNSEDX4A0_fZKJBBr-yb5DJ9pqO4o"
+        "Authorization": "{token_type} {access_token}"
     }
 }
 
@@ -204,6 +204,7 @@ $.ajax(settings).done(function (response) {
 </blockquote>
 <pre><code class="language-bash">curl -X POST "http://ligblog.tk/api/v1/posts" \
 -H "Accept: application/json"</code></pre>
+-H "Authorization: {token_type} {access_token}"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
@@ -261,7 +262,8 @@ $.ajax(settings).done(function (response) {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST "http://ligblog.tk/api/v1/posts/{post}" \
--H "Accept: application/json"</code></pre>
+-H "Accept: application/json"
+-H "Authorization: {token_type} {access_token}"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
@@ -319,7 +321,8 @@ $.ajax(settings).done(function (response) {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE "http://ligblog.tk/api/v1/posts/{post}" \
--H "Accept: application/json"</code></pre>
+-H "Accept: application/json"
+-H "Authorization: {token_type} {access_token}"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
