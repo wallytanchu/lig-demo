@@ -37,7 +37,7 @@
 </div>
                 </label>
                 <input type="submit" id="submit" class="input input-submit">
-                <a href="#" class="form-button">
+                <a href="/admin-list" class="form-button">
                     <div class="button">
     <p class="button-text">Back</p>
 </div>
