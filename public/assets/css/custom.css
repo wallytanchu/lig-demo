@@ -10,6 +10,10 @@
     /* border-radius: 4px; */
 }
 
+.alert.admin{
+    margin-top: 20px;
+}
+
 span.filename{
     display: block;
     float:left;

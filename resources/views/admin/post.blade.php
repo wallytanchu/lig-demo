@@ -27,7 +27,7 @@
                     <textarea name="inquiry" id="inquiry" cols="30" rows="10" class="input input-contents">@if($post) {{ $post->inquiry}} @endif</textarea>
                 </div>
                 @if(session()->has('message'))
-                <div class="alert alert-danger">
+                <div class="alert alert-danger admin">
                     <strong>{{ session()->get('message') }}</strong>
                 </div>
                 @endif
