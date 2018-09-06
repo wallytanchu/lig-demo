@@ -14,7 +14,7 @@
                         <span class="form-file-button">UPLOAD</span>
                     </div>
                 </label>
-                <input type="file" id="image" class="input input-image">
+                <input type="file" id="image" name="image" class="input input-image">
                 <label for="title" class="form-title">TITLE</label>
                 <div class="form-body">
                     <input type="text" id="title" class="input input-text" name="title" value="@if($post){{ $post->title }}@endif">
