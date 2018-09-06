@@ -1,0 +1,22 @@
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    /* border-radius: 4px; */
+}
+
+span.filename{
+    display: block;
+    float:left;
+    background-color: #fff;
+    font-weight: normal;
+    padding: 0px 15px;
+    height: 100%;
+    color:#333;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}

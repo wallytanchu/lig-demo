@@ -31,7 +31,7 @@ class HomeController extends Controller
      * View a post entry
      * 
      * @param Post $post
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function single(Post $post)
     {   
@@ -41,7 +41,7 @@ class HomeController extends Controller
     /**
      * Loads the archive page
      * 
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function archive() {
         $list =  Post::orderby('created_at', 'desc')->orderby('id','desc')->paginate(5)->toJson();

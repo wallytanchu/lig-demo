@@ -41,64 +41,40 @@
 
 <div class="l-wrap js-wrap">
     <!--start header-->
-<header class="l-header  js-header">
+<header class="l-header l-header-admin js-header">
     <div class="l-header-top u-clear">
         
             <div class="l-header-logo">
             
-<div class="logo ">
-    <a href="/">
-    <img src="/assets/images/logo.png" width="253" height="28" alt="BLOG"/>
+<a class="logo " href="/">
+    <img src="/assets/images/logo-admin.png" width="138" height="28" alt="BLOG"/>
 </a>
-</div>
 
             </div>
-            <div class="l-header-hamburger">
-                <a href="#" class="hamburger js-hamburger " >
-    <span class="hamburger-item"></span>
-    <span class="hamburger-item"></span>
-    <span class="hamburger-item"></span>
-</a>
+            <div class="l-header-text">
+                <p>ADMIN PAGE</p>
             </div>
         
     </div>
 </header>
 <!--end header-->
-
-    <nav class="nav js-nav">
-    <ul class="nav-list">
-        <li class="nav-item">
-            <a href="/" class="nav-link">TOP</a>
-        </li>
-        <li class="nav-item">
-            <a href="https://www.facebook.com/facebook/" target="_blank" class="nav-link">Facebook</a>
-        </li>
-        <li class="nav-item">
-            <a href="https://www.twitter.com/twitter" target="_blank" class="nav-link">Twitter</a>
-        </li>
-    </ul>
-</nav>
 @yield('content')
-<!--footer ここから-->
-<footer class="l-footer ">
+        <!--footer ここから-->
+    <footer class="l-footer l-footer-admin">
         
-        <div class="l-footer-button">
-        <a class="page-top js-scroll" href="#js-body">
-            <span class="page-top-arrow"></span>
-        </a>
-        </div>
-        <div class="l-footer-copyright">
-            <small class="copyright">&copy;copyright</small>
-        </div>
-    
-</footer>
-<!--footer ここまで-->
+            <div class="l-footer-copyright">
+             <small class="copyright">&copy;copyright</small>
+            </div>
+        
+    </footer>
+    <!--footer ここまで-->
 </div>
 
-    <!--javascript ここから-->
-    <script src="/assets/lib/jquery-3.1.1.min.js"></script>
-    <script src="/assets/js/vendor.js"></script>
-    <script src="/assets/js/app.js"></script>
-    <!--javascript ここまで-->
-</body>
+        <!--javascript ここから-->
+        <script src="/assets/lib/jquery-3.1.1.min.js"></script>
+        <script src="/aassets/js/vendor.js"></script>
+        <script src="/assets/js/app.js"></script>
+        <script src="/assets/js/custom.js"></script>
+        <!--javascript ここまで-->
+    </body>
 </html>

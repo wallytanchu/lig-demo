@@ -33,13 +33,13 @@
                     </ul>
                 </div>
                 <div class="paginate">
-                    <a href="#" class="paginate-prev @if($list->current_page == 1 ) is-disable @endif">
+                    <a href="{{ $list->prev_page_url }}" class="paginate-prev @if($list->current_page == 1 ) is-disable @endif">
                         <span class="paginate-prev-arrow"></span>
                     </a>
                     @for($x = 1; $x <= $list->last_page; $x++ )
                     <a href="{{ $list->path }}?page={{$x}}" class="paginate-number @if($list->current_page == $x) {{ 'is-current' }}@endif">{{ $x }}</a>
                     @endfor
-                    <a href="#" class="paginate-next @if($list->current_page == $list->last_page) is-disable @endif">
+                    <a href="{{ $list->next_page_url }}" class="paginate-next @if($list->current_page == $list->last_page) is-disable @endif">
                         <span class="paginate-next-arrow"></span>
                     </a>
                 </div>
