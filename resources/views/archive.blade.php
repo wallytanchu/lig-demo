@@ -1,5 +1,6 @@
 
 @extends('layouts.public')
+@section('title', 'Archive Page ' . $list->current_page . ' of ' . $list->last_page)
 @section('content')
     <!--start l-contents-->
     <div class="l-container u-clear">

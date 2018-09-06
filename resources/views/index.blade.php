@@ -1,6 +1,7 @@
 
 
 @extends('layouts.public')
+@section('title', '');
 @section('content')
     <!--start l-contents-->
     <div class="l-container u-clear">
